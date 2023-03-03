@@ -16,14 +16,50 @@ require("@nomiclabs/hardhat-waffle");
 
 /**
  * @type import('hardhat/config').HardhatUserConfig
- */
+*/
+// const DEFAULT_COMPILER_SETTINGS = {
+//   version: "0.7.6",
+//   settings: {
+//     evmVersion: "istanbul",
+//     optimizer: {
+//       enabled: true,
+//       runs: 1_000_000,
+//     },
+//     metadata: {
+//       bytecodeHash: "none",
+//     },
+//   },
+// };
 module.exports = {
-  solidity: "0.7.6",
+  solidity: "0.7.0",
+  // solidity: {
+  //   compilers: [
+  //     {
+  //       version: "0.7.5"
+  //     },
+  //     {
+  //       version: "0.8.0"
+  //     },
+  //     {
+  //       version: "0.6.5"
+  //     }
+  //   ]
+  // },
+  // soldity:{
+
+  //   compilers: [DEFAULT_COMPILER_SETTINGS],
+  // },
   networks: {
     hardhat: {
       forking: {
         url: "https://eth-mainnet.g.alchemy.com/v2/2dCdednERnEU19xc4asghgYfbM8cUnyo",
       },
+    },
+  },
+  settings: {
+    optimizer: {
+      runs: 200,
+      enabled: true,
     },
   },
 };
